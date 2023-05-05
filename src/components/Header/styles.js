@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100vw;
@@ -57,7 +57,7 @@ export const Container = styled.header`
   }
 
   @media only screen and (min-width: 768px) {
-    padding: 2.4rem 12.3rem;
+    padding: 2.4rem 24rem;
     justify-content: space-between;
   }
 `;

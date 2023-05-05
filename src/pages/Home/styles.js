@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   @media only screen and (min-width: 768px) {
     main {
-      padding: 0 12.4rem;
+      padding: 0 24rem;
     }
   }
 `;
