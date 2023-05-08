@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -11,6 +11,8 @@ export const Container = styled.div`
   border: none;
   border-radius: 0.8rem;
   outline: none;
+
+  cursor: pointer;
 
   font: ${({ theme }) => theme.FONTS.ROBOTO_SMALL_R};
   background-color: ${({ theme }) => theme.COLORS.DARK_900};
@@ -31,6 +33,12 @@ export const Container = styled.div`
 
   > input {
     position: absolute;
+    height: 4.8rem;
+  }
+
+  > input::file-selector-button {
     opacity: 0;
+    width: 100%;
+    height: 100%;
   }
 `;

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Container } from './styles';
 import { Header } from '../../components/Header';
 import { Section } from '../../components/Section';
@@ -12,6 +14,10 @@ import prugnaPie from '../../assets/img/prune.png';
 import breadPastrie from '../../assets/img/molla.png';
 
 export function Home() {
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [itemImg, setItemImg] = useState('');
+
   return (
     <Container>
       <Header isDesktop />

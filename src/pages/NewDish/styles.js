@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
@@ -7,7 +7,7 @@ export const Container = styled.div`
     padding: 0 2.8rem;
 
     #back_button {
-      font: 500 1.6rem/2.3rem "Poppins";
+      font: 500 1.6rem/2.3rem 'Poppins';
 
       margin-top: 1rem;
       margin-bottom: 3.2rem;
@@ -30,7 +30,8 @@ export const Container = styled.div`
 
       button {
         margin-top: 2.4rem;
-        background-color: ${({ theme }) => theme.COLORS.TINTS_TOMATO_400};
+        background-color: ${({ theme }) =>
+          theme.COLORS.TINTS_TOMATO_400};
       }
 
       select {
@@ -58,6 +59,13 @@ export const Container = styled.div`
           color: ${({ theme }) => theme.COLORS.LIGHT_100};
         }
       }
+      #image_dish {
+        input::file-selector-button {
+          border: none;
+          background-color: transparent;
+          color: white;
+        }
+      }
     }
   }
 
@@ -72,11 +80,11 @@ export const Container = styled.div`
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
         grid-template-areas:
-          "header header header header"
-          "image name name category"
-          "ingred ingred ingred price"
-          "description description description description"
-          "button button button button";
+          'header header header header'
+          'image name name category'
+          'ingred ingred ingred price'
+          'description description description description'
+          'button button button button';
 
         justify-content: center;
         column-gap: 3.2rem;

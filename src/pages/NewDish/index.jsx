@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { api } from '../../services/api';
 import { useAuth } from '../../hooks/auth';
@@ -24,14 +25,17 @@ export function NewDish() {
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
 
-  function handleNewDish() {
+  const [dishImg, setDishImg] = useState(null);
+
+  async function handleNewDish() {
     api
       .post('/dishs', {
         title,
         category,
-        ingredients,
+        ingredients: [ingredients],
         price,
         description,
+        dish_img: dishImg,
       })
       .then(alert('Prato criado com sucesso.'))
       .catch((error) => {
@@ -41,26 +45,40 @@ export function NewDish() {
           alert('Não foi possível criar o prato.');
         }
       });
+
+    // const fileUploadForm = new FormData();
+    // fileUploadForm.append('image', dishImg);
+
+    // await api.patch('/dishs/image', fileUploadForm);
+
     return console.log({
-      name,
+      title,
       category,
       ingredients,
       price,
       description,
+      dish_img: dishImg,
     });
+  }
+
+  function handleDishImg(event) {
+    const file = event.target.files[0];
+    setDishImg(file);
+
+    console.log(file);
   }
 
   return (
     <Container>
       <Header isDesktop />
       <main>
-        <a href=''>
+        <Link to={'/'}>
           <ButtonText
             id='back_button'
             title='voltar'
             icon={backIcon}
           />
-        </a>
+        </Link>
         <Form>
           <header>
             <h2>Novo prato</h2>
@@ -68,7 +86,11 @@ export function NewDish() {
 
           <div>
             <label htmlFor='img_dish'>Imagem do prato</label>
-            <InputFile />
+            <InputFile
+              id='image_dish'
+              type='file'
+              onChange={handleDishImg}
+            />
           </div>
 
           <div>
@@ -96,7 +118,9 @@ export function NewDish() {
 
           <div>
             <label htmlFor='ingredients'>Ingredientes</label>
-            <IngredientsInput />
+            <IngredientsInput
+              onChange={(e) => setIngredients(e.target.value)}
+            />
           </div>
 
           <div>

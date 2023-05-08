@@ -1,14 +1,14 @@
-import { Container } from "./styles";
+import { Container } from './styles';
 
-import { TagNew } from "../TagNew";
-import { TagAdded } from "../TagAdded";
+import { TagNew } from '../TagNew';
+import { TagAdded } from '../TagAdded';
 
-export function IngredientsInput() {
+export function IngredientsInput({ ...rest }) {
   return (
     <Container>
       <div>
         <TagAdded />
-        <TagNew />
+        <TagNew {...rest} />
       </div>
     </Container>
   );
