@@ -1,25 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-
   display: flex;
   align-items: center;
 
   gap: 0.6rem;
-
-  background-color: transparent;
+  padding: 0.6rem 1.4rem;
 
   border: 1.6px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
   border-radius: 0.6rem;
 
-  color: ${({ theme }) => theme.COLORS.LIGHT_100};
-
-  padding: 0.6rem 1.4rem;
-
   > input {
+    width: 9rem;
+
     font: ${({ theme }) => theme.FONTS.ROBOTO_SMALL_R};
-    width: 7rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     background-color: transparent;
     border: none;
@@ -30,8 +24,17 @@ export const Container = styled.div`
     }
   }
 
-  > a {
+  > button {
+    margin-top: 0;
+    border: none;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100} !important;
+    background-color: transparent !important;
+
     img {
+      border: none;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      background-color: transparent;
+
       width: 1.2rem;
       height: 1.2rem;
     }

@@ -7,9 +7,13 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
+  gap: 1.2rem;
+
   border: none;
   border-radius: 0.8rem;
   outline: none;
+
+  overflow: auto;
 
   font: ${({ theme }) => theme.FONTS.ROBOTO_SMALL_R};
   background-color: ${({ theme }) => theme.COLORS.DARK_900};

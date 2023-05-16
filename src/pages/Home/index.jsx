@@ -1,22 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
-import { Container } from './styles';
-import { Header } from '../../components/Header';
-import { Section } from '../../components/Section';
-import { Card } from '../../components/Card';
-import { CardBelt } from '../../components/CardBelt';
-import { Banner } from '../../components/Banner';
-import { Footer } from '../../components/Footer';
+import { api } from "../../services/api";
 
-import saladaRav from '../../assets/img/ravanello.png';
-import shrimpSpa from '../../assets/img/shrimp_large.png';
-import prugnaPie from '../../assets/img/prune.png';
-import breadPastrie from '../../assets/img/molla.png';
+import { Container } from "./styles";
+import { Header } from "../../components/Header";
+import { Section } from "../../components/Section";
+import { Card } from "../../components/Card";
+import { CardBelt } from "../../components/CardBelt";
+import { Banner } from "../../components/Banner";
+import { Footer } from "../../components/Footer";
 
 export function Home() {
-  const [title, setTitle] = useState('');
-  const [price, setPrice] = useState('');
-  const [itemImg, setItemImg] = useState('');
+  const [dishs, setDishs] = useState([]);
+
+  useEffect(() => {
+    async function fetchDishs() {
+      const response = await api.get("/dishs");
+      setDishs(response.data);
+    }
+
+    fetchDishs();
+  }, []);
 
   return (
     <Container>
@@ -24,84 +28,46 @@ export function Home() {
       <main>
         <Banner />
 
-        <Section title='Refeições'>
+        <Section title="Refeições">
           <CardBelt>
-            <Card
-              isAdmin
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={saladaRav}
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={shrimpSpa}
-              description='Massa fresca com camarões e pesto.'
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={saladaRav}
-              description='Rabanetes, folhas verdes e molho agridoce salpicados com gergelim'
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={prugnaPie}
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={breadPastrie}
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={saladaRav}
-            />
-            <Card
-              title='Salada Ravanello'
-              price='20,00'
-              itemImg={saladaRav}
-            />
+            {dishs &&
+              dishs.map((dish) => (
+                <Card
+                  key={String(dish.id)}
+                  title={dish.title}
+                  price={dish.price}
+                  description={dish.description}
+                  itemImg={`${api.defaults.baseURL}/files/${dish.dish_image}`}
+                />
+              ))}
           </CardBelt>
         </Section>
-        <Section title='Pratos principais'>
+        <Section title="Pratos principais">
           <CardBelt>
-            <Card
-              title='Prugna Pie'
-              price='79,70'
-              itemImg={prugnaPie}
-            />
-            <Card
-              title='Prugna Pie'
-              price='12,30'
-              itemImg={breadPastrie}
-            />
-            <Card
-              title='Prugna Pie'
-              price='56,00'
-              itemImg={saladaRav}
-            />
+            {dishs &&
+              dishs.map((dish) => (
+                <Card
+                  key={String(dish.id)}
+                  title={dish.title}
+                  price={dish.price}
+                  description={dish.description}
+                  itemImg={`${api.defaults.baseURL}/files/${dish.dish_image}`}
+                />
+              ))}
           </CardBelt>
         </Section>
-        <Section title='Bebidas'>
+        <Section title="Bebidas">
           <CardBelt>
-            <Card
-              title='Espresso'
-              price='06,00'
-              itemImg={prugnaPie}
-            />
-            <Card
-              title='Suco de maracujá'
-              price='10,00'
-              itemImg={breadPastrie}
-            />
-            <Card
-              title='Chá Verde'
-              price='06,70'
-              itemImg={saladaRav}
-            />
+            {dishs &&
+              dishs.map((dish) => (
+                <Card
+                  key={String(dish.id)}
+                  title={dish.title}
+                  price={dish.price}
+                  description={dish.description}
+                  itemImg={`${api.defaults.baseURL}/files/${dish.dish_image}`}
+                />
+              ))}
           </CardBelt>
         </Section>
       </main>

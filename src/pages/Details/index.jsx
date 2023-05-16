@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+import { api } from "../../services/api";
+
 import { Container } from "./styles";
 
 import { Header } from "../../components/Header";
@@ -21,7 +25,8 @@ export function Details() {
           price="pedir - R$25,00"
           itemImg={saladImg}
         >
-          Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+          Rabanetes, folhas verdes e molho agridoce salpicados com
+          gergelim.
         </DetailsCard>
       </main>
 
