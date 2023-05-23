@@ -11,6 +11,10 @@ export const Container = styled.div`
     align-content: center;
 
     padding: 3.6rem 5.6rem 0;
+
+    a {
+      cursor: pointer;
+    }
   }
 
   @media only screen and (min-width: 1024px) {

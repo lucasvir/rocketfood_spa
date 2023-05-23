@@ -58,17 +58,44 @@ export const Container = styled.div`
       }
 
       button {
-        margin-top: 2.4rem;
-        background-color: ${({ theme }) => theme.COLORS.TINTS_TOMATO_400};
+        background-color: ${({ theme }) =>
+          theme.COLORS.TINTS_TOMATO_400};
       }
 
       > #button_wrapper {
+        margin-top: 2.4rem;
+
         display: flex;
         gap: 3.2rem;
 
         button:first-child {
           background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
+      }
+
+      .tag-delete {
+        width: auto;
+        background-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+
+        border: none;
+        border-radius: 0.6rem;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+        > button {
+          img {
+            width: 0.8rem;
+          }
+        }
+      }
+
+      .tag-add {
+        background-color: transparent;
+
+        border: 1.6px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
+        border-radius: 0.6rem;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
       }
     }
   }

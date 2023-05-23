@@ -15,12 +15,17 @@ export const Container = styled.div`
   text-align: center;
   font: ${({ theme }) => theme.FONTS.POPPINS_100_M};
 
-  > a {
+  > button {
     width: 2.4rem;
-    margin-top: 1.6rem;
+    /* margin-top: 1.6rem; */
     left: 7rem;
     position: relative;
+    z-index: 5;
+
+    background-color: transparent;
+    border: none;
     img {
+      z-index: 10;
     }
 
     #edit_icon {
@@ -36,6 +41,7 @@ export const Container = styled.div`
 
   > img {
     width: 8.8rem;
+    cursor: pointer;
   }
 
   #description_card {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100vw;
@@ -11,6 +11,11 @@ export const Container = styled.header`
   padding: 5.6rem 2.8rem 2.4rem;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+  #burger-menu {
+    display: flex;
+    align-items: center;
+  }
 
   > img:first-child {
     width: 2.4rem;

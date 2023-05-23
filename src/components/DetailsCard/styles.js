@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -12,6 +12,7 @@ export const Container = styled.div`
 
   > img {
     margin-bottom: 1.6rem;
+    width: 39rem;
   }
 
   > div {
@@ -53,7 +54,7 @@ export const Container = styled.div`
     justify-content: center;
     gap: 4.6rem;
 
-    margin-top: -19rem;
+    height: 100%;
 
     > div {
       text-align: start;

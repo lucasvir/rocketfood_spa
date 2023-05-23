@@ -14,7 +14,6 @@ import { ButtonText } from "../../components/ButtonText";
 import { TextArea } from "../../components/TextArea";
 import { InputFile } from "../../components/InputFile";
 import { IngredientsInput } from "../../components/IngredientsInput";
-import { TagAdded } from "../../components/TagAdded";
 import { TagNew } from "../../components/TagNew";
 import { Footer } from "../../components/Footer";
 
@@ -30,6 +29,10 @@ export function NewDish() {
   const [dishImg, setDishImg] = useState(null);
 
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   function handleAddIngredients() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -98,13 +101,12 @@ export function NewDish() {
     <Container>
       <Header isDesktop />
       <main>
-        <Link to={"/"}>
-          <ButtonText
-            id="back_button"
-            title="voltar"
-            icon={backIcon}
-          />
-        </Link>
+        <ButtonText
+          id="back_button"
+          title="voltar"
+          icon={backIcon}
+          onClick={handleBack}
+        />
         <Form>
           <header>
             <h2>Novo prato</h2>
@@ -138,8 +140,8 @@ export function NewDish() {
             >
               <option value="lunch">Selecione uma categoria</option>
               <option value="lunch">Refeição</option>
-              <option value="disert">Sobremesa</option>
-              <option value="dinner">Bebida</option>
+              <option value="dessert">Sobremesa</option>
+              <option value="drink">Bebida</option>
             </select>
           </div>
 

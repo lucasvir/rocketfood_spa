@@ -93,7 +93,7 @@ export const Container = styled.div`
         border: 1.6px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
         border-radius: 0.6rem;
 
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
+        color: ${({ theme }) => theme.COLORS.LIGHT_400};
       }
     }
   }
