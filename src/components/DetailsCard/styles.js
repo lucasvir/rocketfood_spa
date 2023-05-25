@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   > img {
     margin-bottom: 1.6rem;
-    width: 39rem;
+    width: 26.4rem;
   }
 
   > div {
@@ -49,12 +49,17 @@ export const Container = styled.div`
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: ${({theme}) => theme.QUERYS.DESKTOP_100}) {
     flex-direction: row;
     justify-content: center;
     gap: 4.6rem;
 
     height: 100%;
+
+    >img {
+    width: 39rem;
+
+    }
 
     > div {
       text-align: start;

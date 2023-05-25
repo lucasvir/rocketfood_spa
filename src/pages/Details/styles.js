@@ -17,7 +17,7 @@ export const Container = styled.div`
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: ${({theme}) => theme.QUERYS.DESKTOP_100}) {
     > main {
       padding: 3.6rem 12.3rem 0;
     }

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -27,6 +27,7 @@ export function NewDish() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [dishImg, setDishImg] = useState(null);
+  const [userAdmin, setUserAdmin] = useState("");
 
   const navigate = useNavigate();
 
@@ -97,9 +98,25 @@ export function NewDish() {
     return navigate("/");
   }
 
+  useEffect(() => {
+    async function userIsAdmin() {
+      const { is_admin } = JSON.parse(
+        window.localStorage.getItem("@rocketfood:user")
+      );
+
+      setUserAdmin(is_admin);
+    }
+
+    userIsAdmin();
+  }, []);
+
   return (
     <Container>
-      <Header isDesktop />
+      {userAdmin ? (
+        <Header isDesktop isAdmin />
+      ) : (
+        <Header isDesktop />
+      )}
       <main>
         <ButtonText
           id="back_button"
@@ -186,7 +203,7 @@ export function NewDish() {
             />
           </div>
 
-          <Button title="Salvar alterações" onClick={handleNewDish} />
+          <Button title="Salvar Prato" onClick={handleNewDish} />
         </Form>
       </main>
       <Footer />

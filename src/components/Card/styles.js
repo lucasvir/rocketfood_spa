@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   min-width: 21rem;
+  width: 30%;
+
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
@@ -17,20 +20,36 @@ export const Container = styled.div`
 
   > button {
     width: 2.4rem;
-    /* margin-top: 1.6rem; */
-    left: 7rem;
-    position: relative;
-    z-index: 5;
+    margin-top: 1.2rem;
+
+    display: flex;
+    align-self: flex-end;
+    /* left: 7rem; */
+    /* position: relative; */
+    z-index: 4;
 
     background-color: transparent;
     border: none;
     img {
       z-index: 10;
+      margin-top: 1.2rem;
     }
 
     #edit_icon {
       bottom: 7rem;
     }
+  }
+
+  #description_card {
+    display: none;
+  }
+
+  #card_controls {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #add_button {
@@ -44,12 +63,8 @@ export const Container = styled.div`
     cursor: pointer;
   }
 
-  #description_card {
-    display: none;
-  }
-
   > div {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,13 +75,16 @@ export const Container = styled.div`
 
     span {
       margin-top: 1.2rem;
+      margin-bottom: 4.2rem;
+
       color: ${({ theme }) => theme.COLORS.TINTS_CAKE_100};
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: ${({theme}) => theme.QUERYS.DESKTOP_100}) {
     padding: 0 2.4rem;
-    min-width: auto;
+    min-width: none;
+
 
     > a {
       left: 10rem;
@@ -86,9 +104,11 @@ export const Container = styled.div`
       margin-top: 1.5rem;
     }
 
-    > div {
-      white-space: nowrap;
+    > button {
+      left: 9rem;
+    }
 
+    > div {
       p {
         font: ${({ theme }) => theme.FONTS.POPPINS_300_B};
       }
@@ -100,11 +120,13 @@ export const Container = styled.div`
 
     #card_controls {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 1.6rem;
+      gap: 1.4rem;
 
+      width: auto;
       margin-top: 1.5rem;
-      margin-bottom: 2.4rem;
+      margin-bottom: 3.2rem;
 
       > div {
         margin: 0;

@@ -19,6 +19,7 @@ export function Card({
       <div>
         <p>{title}</p>
         {description && <p id="description_card">{description}</p>}
+        {/* {isAdmin ? "" : description &&  <p id="description_card">{description}</p>} */}
         <span>R${price}</span>
         <div id="card_controls">
           {isAdmin ? "" : <CountBar />}

@@ -21,6 +21,10 @@ export const Container = styled.main`
     header {
       display: none;
     }
+
+    button {
+      justify-content: center;
+    }
   }
 
   #logo {

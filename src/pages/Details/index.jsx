@@ -18,6 +18,7 @@ import backIcon from "../../assets/icon/back.svg";
 export function Details() {
   const [dish, setDish] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const [userAdmin, setUserAdmin] = useState("");
 
   const parsedUrl = new URL(window.location.href);
   const dish_id = parsedUrl.searchParams.get("id");
@@ -39,9 +40,25 @@ export function Details() {
     fetchDish();
   }, []);
 
+  useEffect(() => {
+    async function userIsAdmin() {
+      const { is_admin } = JSON.parse(
+        window.localStorage.getItem("@rocketfood:user")
+      );
+
+      setUserAdmin(is_admin);
+    }
+
+    userIsAdmin();
+  }, []);
+
   return (
     <Container>
-      <Header isDesktop />
+      {userAdmin ? (
+        <Header isDesktop isAdmin />
+      ) : (
+        <Header isDesktop />
+      )}
       <main>
         <ButtonText
           title="voltar"

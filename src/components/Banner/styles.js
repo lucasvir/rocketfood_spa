@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 
   > div {
-    margin-top: 2.5rem;
+    margin-top: 1.4rem;
 
     h3 {
       font: 600 1.6rem/25.2px "Poppins";
@@ -33,10 +33,10 @@ export const Container = styled.div`
     }
   }
 
-  @media only screen and (min-width: 1086px) {
+  @media only screen and (min-width: ${({theme}) => theme.QUERYS.FULL_100}) {
     height: 26rem;
-
     margin-top: 16.4rem;
+    gap: 12.2rem;
 
     > img {
       width: auto;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
 import { Container } from "./styles";
@@ -20,8 +21,18 @@ export function Home({ isAdmin }) {
   const [desserts, setDesserts] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [search, setSearch] = useState("");
+  const [userAdmin, setUserAdmin] = useState("");
 
   const navigate = useNavigate();
+
+  const { user } = useAuth();
+
+  function userIsAdmin() {
+    const { is_admin } = user;
+
+    setUserAdmin(is_admin);
+    console.log(userAdmin);
+  }
 
   function handleEditDish(id) {
     navigate(`/editdish/${id}`);
@@ -30,6 +41,10 @@ export function Home({ isAdmin }) {
   async function handleDishDetails(id) {
     navigate(`/details/?id=${id}`);
   }
+
+  useEffect(() => {
+    userIsAdmin();
+  }, []);
 
   useEffect(() => {
     async function fetchLunch() {
@@ -64,8 +79,7 @@ export function Home({ isAdmin }) {
   return (
     <Container>
       <Header
-        isDesktop
-        isAdmin
+        isAdmin={userAdmin}
         onChange={(e) => setSearch(e.target.value)}
       />
       <main>
@@ -76,15 +90,15 @@ export function Home({ isAdmin }) {
             {dishs &&
               dishs.map((dish) => (
                 <Card
-                  isAdmin
                   key={dish.id}
                   title={dish.title}
                   price={dish.price}
                   description={dish.description}
                   itemImg={`${api.defaults.baseURL}/files/${dish.dish_image}`}
+                  isAdmin={userAdmin}
                   onClick={() => handleDishDetails(dish.id)}
                 >
-                  {isAdmin ? (
+                  {userAdmin ? (
                     <img
                       id="edit_icon"
                       src={editIcon}
@@ -105,17 +119,17 @@ export function Home({ isAdmin }) {
         <Section title="Sobremesas">
           <CardBelt>
             {desserts &&
-              desserts.map((dessert, index) => (
+              desserts.map((dessert) => (
                 <Card
-                  isAdmin
                   key={dessert.id}
                   title={dessert.title}
                   price={dessert.price}
                   description={dessert.description}
                   itemImg={`${api.defaults.baseURL}/files/${dessert.dish_image}`}
+                  isAdmin={userAdmin}
                   onClick={() => handleDishDetails(dessert.id)}
                 >
-                  {isAdmin ? (
+                  {userAdmin ? (
                     <img
                       id="edit_icon"
                       src={editIcon}
@@ -126,7 +140,7 @@ export function Home({ isAdmin }) {
                     <img
                       src={favoriteIcon}
                       alt="ícone para favaritar"
-                      onClick={handleFavorited}
+                      onClick={() => handleFavorited(dessert.id)}
                     />
                   )}
                 </Card>
@@ -136,17 +150,17 @@ export function Home({ isAdmin }) {
         <Section title="Bebidas">
           <CardBelt>
             {drinks &&
-              drinks.map((drink, index) => (
+              drinks.map((drink) => (
                 <Card
-                  isAdmin
                   key={drink.id}
                   title={drink.title}
                   price={drink.price}
                   description={drink.description}
                   itemImg={`${api.defaults.baseURL}/files/${drink.dish_image}`}
+                  isAdmin={userAdmin}
                   onClick={() => handleDishDetails(drink.id)}
                 >
-                  {isAdmin ? (
+                  {userAdmin ? (
                     <img
                       id="edit_icon"
                       src={editIcon}
@@ -157,7 +171,7 @@ export function Home({ isAdmin }) {
                     <img
                       src={favoriteIcon}
                       alt="ícone para favaritar"
-                      onClick={handleFavorited}
+                      onClick={() => handleFavorited(drink.id)}
                     />
                   )}
                 </Card>

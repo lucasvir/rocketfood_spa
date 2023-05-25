@@ -17,6 +17,22 @@ export const Container = styled.header`
     align-items: center;
   }
 
+  #search {
+    display: none;
+  }
+
+  #new-dish {
+    display: none;
+  }
+
+  #dish-order {
+    display: none;
+  }
+
+  #sign-out {
+    display: none;
+  }
+
   > img:first-child {
     width: 2.4rem;
   }
@@ -55,14 +71,45 @@ export const Container = styled.header`
     > span {
       font: ${({ theme }) => theme.FONTS.ROBOTO_SMALLEST_R};
       color: ${({ theme }) => theme.COLORS.TINTS_CAKE_100};
-
-      /* margin-left: -4rem;
-      margin-right: 4rem; */
     }
   }
 
-  @media only screen and (min-width: 768px) {
-    padding: 2.4rem 24rem;
+  @media only screen and (min-width: ${({theme}) => theme.QUERYS.TABLET_100}) {
+    padding: 2.4rem 6rem;
     justify-content: space-between;
+
+    #burger-menu {
+      display: none;
+    }
+
+    #mobile-cart {
+      display: none;
+    }
+
+    #sign-out {
+      display: initial;
+    }
+
+    #new-dish {
+      display: flex;
+    }
+
+    #search {
+      display: flex;
+    }
+
+    #dish-order {
+      display: flex;
+    }
   }
-`;
+
+  @media only screen and (min-width: ${({ theme }) => theme.QUERYS.DESKTOP_100}) {
+
+      padding: 0 10rem;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.QUERYS.FULL_100}) {
+
+  padding: 0 24rem;
+}
+  `;

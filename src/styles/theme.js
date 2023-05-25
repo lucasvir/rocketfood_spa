@@ -52,4 +52,10 @@ export default {
     ROBOTO_BIGGEST_R: "400 3.2rem/160% 'Roboto'",
     ROBOTO_GIANT_B: "700 4.2rem 'Roboto'",
   },
+
+  QUERYS: {
+    TABLET_100: "800px",
+    DESKTOP_100: "1024px",
+    FULL_100: "1520px",
+  },
 };

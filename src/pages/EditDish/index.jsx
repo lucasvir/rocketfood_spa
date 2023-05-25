@@ -29,6 +29,7 @@ export function EditDish() {
   const [newIngredient, setNewIngredient] = useState("");
   const [dishImg, setDishImg] = useState(null);
   const [dish, setDish] = useState([]);
+  const [userAdmin, setUserAdmin] = useState("");
 
   const navigate = useNavigate();
 
@@ -50,7 +51,7 @@ export function EditDish() {
       .put(`/dishs/${id}`, {
         title,
         category,
-        ingredients: [...dish.ingredients, ...ingredients],
+        ingredients: oldIngredients,
         price,
         description,
         dish_img: dishImg,
@@ -80,7 +81,7 @@ export function EditDish() {
   }
 
   function handleRemoveIngredients(deleted) {
-    setIngredients((prevState) =>
+    setOldIngredients((prevState) =>
       prevState.filter((ingredient) => ingredient !== deleted)
     );
   }
@@ -115,9 +116,25 @@ export function EditDish() {
     fetchIngredients();
   }, []);
 
+  useEffect(() => {
+    async function userIsAdmin() {
+      const { is_admin } = JSON.parse(
+        window.localStorage.getItem("@rocketfood:user")
+      );
+
+      setUserAdmin(is_admin);
+    }
+
+    userIsAdmin();
+  }, []);
+
   return (
     <Container>
-      <Header />
+      {userAdmin ? (
+        <Header isDesktop isAdmin />
+      ) : (
+        <Header isDesktop />
+      )}
       <main>
         <Link to={"/"}>
           <ButtonText
@@ -176,7 +193,7 @@ export function EditDish() {
                 oldIngredients.map((oldIngredient, index) => (
                   <TagNew
                     key={String(index)}
-                    placeholder={oldIngredient}
+                    value={oldIngredient}
                     onClick={() => {
                       handleRemoveIngredients(oldIngredient);
                     }}
@@ -214,6 +231,7 @@ export function EditDish() {
             <Button title="Excluir prato" onClick={handleRemove} />
             <Button
               title="Salvar alterações"
+              setOldIngredients
               onClick={handleUpdatedDish}
             />
           </div>
