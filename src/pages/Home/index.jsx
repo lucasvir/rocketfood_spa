@@ -16,7 +16,7 @@ import { Footer } from "../../components/Footer";
 import favoriteIcon from "../../assets/icon/heart.svg";
 import editIcon from "../../assets/icon/edit.svg";
 
-export function Home({ isAdmin }) {
+export function Home() {
   const [dishs, setDishs] = useState([]);
   const [desserts, setDesserts] = useState([]);
   const [drinks, setDrinks] = useState([]);
@@ -31,7 +31,6 @@ export function Home({ isAdmin }) {
     const { is_admin } = user;
 
     setUserAdmin(is_admin);
-    console.log(userAdmin);
   }
 
   function handleEditDish(id) {
@@ -85,7 +84,7 @@ export function Home({ isAdmin }) {
       <main>
         <Banner />
 
-        <Section title="Refeições">
+         <Section title="Refeições">
           <CardBelt>
             {dishs &&
               dishs.map((dish) => (
@@ -109,7 +108,7 @@ export function Home({ isAdmin }) {
                     <img
                       src={favoriteIcon}
                       alt="ícone para favaritar"
-                      onClick={() => handleFavorited(dish.id)}
+                      /*onClick={() => handleFavorited(dish.id)}*/
                     />
                   )}
                 </Card>
@@ -140,7 +139,7 @@ export function Home({ isAdmin }) {
                     <img
                       src={favoriteIcon}
                       alt="ícone para favaritar"
-                      onClick={() => handleFavorited(dessert.id)}
+                      /*onClick={() => handleFavorited(dessert.id)}*/
                     />
                   )}
                 </Card>
@@ -171,7 +170,7 @@ export function Home({ isAdmin }) {
                     <img
                       src={favoriteIcon}
                       alt="ícone para favaritar"
-                      onClick={() => handleFavorited(drink.id)}
+                      /*onClick={() => handleFavorited(drink.id)}*/
                     />
                   )}
                 </Card>

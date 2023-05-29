@@ -29,6 +29,10 @@ export function Details() {
     navigate(-1);
   }
 
+  function handleEditDish(id) {
+   navigate(`/editdish/${id}`) 
+  }
+
   useEffect(() => {
     async function fetchDish() {
       const response = await api.get("/dishs");
@@ -74,6 +78,8 @@ export function Details() {
               price={`incluir - R$${dish.price}`}
               itemImg={`${api.defaults.baseURL}/files/${dish.dish_image}`}
               dishIngredients={dish.ingredients}
+              isAdmin={userAdmin}
+              onClick={() => handleEditDish(dish.id)}
             >
               {dish.description}
             </DetailsCard>

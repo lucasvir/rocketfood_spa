@@ -14,6 +14,7 @@ export function DetailsCard({
   price,
   itemImg,
   dishIngredients,
+  onClick,
   children,
 }) {
   const [ingredients, setIngredients] = useState([]);
@@ -39,7 +40,7 @@ export function DetailsCard({
         <div id="controls">
           {isAdmin ? "" : <CountBar />}
           {isAdmin ? (
-            <Button title="Editar prato" />
+            <Button title="Editar prato" onClick={onClick}/>
           ) : (
             <Button title={price} />
           )}
