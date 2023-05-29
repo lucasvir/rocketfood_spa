@@ -23,3 +23,5 @@ Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e 
 
 - e-mail: admin@email.com
 - password: admin
+
+:heavy_check_mark: https://rocketdish.netlify.app/
