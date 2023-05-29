@@ -23,5 +23,7 @@ Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e 
 - password: admin
 
 #
+ 
+ ![logo marca do food explorer](./src/assets/img/logo_full.png)
 
-:heavy_check_mark: https://rocketdish.netlify.app/   || ![logo marca do food explorer](./src/assets/img/logo_full.png)
+:heavy_check_mark: https://rocketdish.netlify.app/
