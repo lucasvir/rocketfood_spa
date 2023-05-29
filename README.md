@@ -1,4 +1,4 @@
-# ![logo marca do food explorer](./src/assets/img/logo_full.png)
+![logo marca do food explorer](./src/assets/img/logo_full.png)
 
 
 # DESCRIÇÃO
@@ -23,8 +23,3 @@ Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e 
 
 - e-mail: admin@email.com
 - password: admin
-
-
-# AUTORES
-
-Lucas do Amaral Virmond @ lavirmond@gmail.com
