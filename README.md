@@ -1,13 +1,13 @@
 ![logo marca do food explorer](./src/assets/img/logo_full.png)
 
 
-# DESCRIÇÃO
+# Descrição
 
 Aplicação para um restaurante fictício. 
 Conta com organização dos pratos por categoria, informação detalhada de cada prato, assim como busca por pratos via barra de pesquisa. 
 
 
-# FUNCIONALIDADE
+# :shovel: Funcionalidades
 
 - Criação de conta de usuário
 - Autenticação do usuário via email e senha
@@ -17,7 +17,7 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 - Editar pratos
 - Excluir pratos
 
-# COMO UTILIZAR
+# Obs
 
 Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
 
