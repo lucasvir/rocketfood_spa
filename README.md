@@ -10,7 +10,7 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 - Criação de conta de usuário
 - Autenticação do usuário via email e senha
 - Barra de pesquisa de pratos
-- Vizualizar prato detalhado
+- Vizualização detalhada de pratos
 - Criar pratos
 - Editar pratos
 - Excluir pratos
