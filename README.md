@@ -28,5 +28,7 @@ Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e 
 
 :heavy_check_mark: https://rocketdish.netlify.app/
 
+
+![Gif mostrando navegação](https://media.giphy.com/media/rgiMlJnq6JaA6uMUob/giphy.gif)
 ![Signin page](https://i.imgur.com/xBlYa1X.png)
 ![Home](https://i.imgur.com/y3Resoa.png)
