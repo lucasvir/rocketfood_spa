@@ -20,7 +20,7 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 
 Nescessário login como admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
 
-- e-mail: ****@***.***
+- e-mail: ****
 - password: ****
 
 #
