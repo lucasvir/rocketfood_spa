@@ -2,6 +2,7 @@
 # :scroll: Descrição
 
 Aplicação para um restaurante fictício. 
+
 Conta com organização dos pratos por categoria, informação detalhada de cada prato, assim como busca por pratos via barra de pesquisa. 
 
 
