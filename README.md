@@ -5,9 +5,9 @@ Aplicação para um restaurante fictício.
 Conta com organização dos pratos por categoria, informação detalhada de cada prato, assim como busca por pratos via barra de pesquisa. 
 
 
-# :wrench: Funcionalidades
+## :wrench: Funcionalidades
 
-- Criação de conta de usuário
+- *Criação de conta de usuário*
 - Autenticação do usuário via email e senha
 - Barra de pesquisa de pratos
 - Vizualização detalhada de pratos
@@ -15,7 +15,7 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 - Editar pratos
 - Excluir pratos
 
-# :eyeglasses: Obs
+## :eyeglasses: Obs
 
 Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
 
