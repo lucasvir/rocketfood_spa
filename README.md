@@ -11,16 +11,16 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 - *Autenticação do usuário via email e senha*
 - *Barra de pesquisa de pratos*
 - *Vizualização detalhada de pratos*
-- *Criar pratos*
-- *Editar pratos*
-- *Excluir pratos*
+- *Criação de pratos*
+- *Edição de pratos*
+- *Exclusão de pratos*
 
 ## 🚧: Obs
 
-Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
+Nescessário login como admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
 
-- e-mail: **admin@email.com**
-- password: **admin**
+- e-mail: ****@***.***
+- password: ****
 
 #
  
