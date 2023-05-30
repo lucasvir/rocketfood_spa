@@ -15,7 +15,7 @@ Conta com organização dos pratos por categoria, informação detalhada de cada
 - *Editar pratos*
 - *Excluir pratos*
 
-## :eyeglasses: Obs
+## 🚧: Obs
 
 Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e remover pratos.
 
@@ -27,3 +27,6 @@ Utilize a conta admin para ter acesso as funcionalidades de adicionar, editar e 
  ![logo marca do food explorer](./src/assets/img/logo_full.png)
 
 :heavy_check_mark: https://rocketdish.netlify.app/
+
+![Signin page](https://i.imgur.com/xBlYa1X.png)
+![Home](https://i.imgur.com/y3Resoa.png)
